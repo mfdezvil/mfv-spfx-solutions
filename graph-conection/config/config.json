@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "graph-connection-test-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/graphConnectionTest/GraphConnectionTestWebPart.js",
+          "manifest": "./src/webparts/graphConnectionTest/GraphConnectionTestWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "GraphConnectionTestWebPartStrings": "lib/webparts/graphConnectionTest/loc/{locale}.js"
+  }
+}
