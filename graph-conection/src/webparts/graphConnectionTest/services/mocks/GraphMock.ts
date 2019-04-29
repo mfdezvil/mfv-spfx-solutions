@@ -6,8 +6,8 @@ import { ISPGraphTeams } from "../../entities/ISPGraphTeam";
 export class GraphMock implements IGraphDataReader {
 
     private static userInfo: ISPGraphUser = {
-        displayName: "Maria Fernandez Villanueva",
-        mail: "mariaf@mfvcyc2.onmicrosoft.com"
+        displayName: "Mock de prueba",
+        mail: "mockdeprueba@tenantprueba.onmicrosoft.com"
     };
 
     private static userMail: ISPGraphMails = {
@@ -66,8 +66,8 @@ export class GraphMock implements IGraphDataReader {
                 "attendees": [],
                 "organizer": {
                     "emailAddress": {
-                        "name": "Maria Fernandez Villanueva",
-                        "address": "mariaf@mfvcyc2.onmicrosoft.com"
+                        "name": "Convocante de prueba",
+                        "address": "convocante@tenantprueba.onmicrosoft.com"
                     }
                 }
             }
