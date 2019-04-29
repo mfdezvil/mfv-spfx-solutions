@@ -87,4 +87,16 @@
       font-weight: normal;
     }
   }
+
+  .teamChannels {
+    ul {
+      padding-left: 25px;
+    }
+    li {
+      text-align: left;
+    }
+    a, a:visited {
+      color: inherit;
+    }
+  }
 }

@@ -34,6 +34,7 @@ declare interface IGraphConnectionTestWebPartStrings {
   Read: string;
   Yes: string;
   No: string;
+  TeamChannels: string;
 }
 
 declare module 'GraphConnectionTestWebPartStrings' {

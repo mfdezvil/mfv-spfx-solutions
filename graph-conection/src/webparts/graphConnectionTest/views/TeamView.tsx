@@ -14,14 +14,22 @@ export class TeamView extends React.Component {
                         <tr>
                             <th>{strings.TeamName}</th>
                             <th>{strings.TeamDescription}</th> 
+                            <th>{strings.TeamChannels}</th> 
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            userTeams.map((email) => {
+                            userTeams.map((team) => {
                                 return <tr>
-                                    <th>{email.displayName}</th>
-                                    <th>{email.description}</th> 
+                                    <th>{team.displayName}</th>
+                                    <th>{team.description}</th> 
+                                    <th className={styles.teamChannels}>
+                                        <ul>
+                                            {team.channels.map((channel) => {
+                                                return <li>{channel.displayName}</li>;
+                                            })}
+                                        </ul>
+                                    </th> 
                                 </tr>;
                             })
                         }

@@ -14,6 +14,7 @@ import { ITeamItem } from '../models/ITeamItem';
 import { TeamsHelper } from '../helpers/TeamsHelper';
 import { IEventItem } from '../models/IEventItem';
 import { CalendarHelper } from '../helpers/CalendarHelper';
+import { ISPGraphTeamChannels } from '../entities/ISPGraphTeamChannel';
 
 export class GraphAccessManager {
     private graphDataReader: IGraphDataReader;
@@ -40,13 +41,6 @@ export class GraphAccessManager {
             }
             else resolve(null);
         });
-    }
-
-    private GetUserDataCallback(graphUser: IUserItem):IUserItem {
-        if(graphUser) {
-            return CurrentUserDataHelper.GetUserFromResponse(graphUser);
-        }
-        return null;
     }
 
     public async GetUserMails(): Promise<IMailItem[]> {
@@ -76,6 +70,12 @@ export class GraphAccessManager {
     public async GetUserTeams(): Promise<ITeamItem[]> {
         
         var graphTeams = await this.graphDataReader.GetCurrentUserTeams();
+        for(let i=0; i< graphTeams.value.length; i++) {
+            let team= graphTeams.value[i];
+            let channels = await this.graphDataReader.GetChannelsByTeam(team.id);
+            if (channels != null)
+                team.channels = channels.value;
+        }
         
         return new Promise<ITeamItem[]>((resolve) => {
             if(graphTeams) {
@@ -84,5 +84,4 @@ export class GraphAccessManager {
             else resolve(null);
         });
     }
-
 }

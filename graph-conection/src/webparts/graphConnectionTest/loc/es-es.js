@@ -33,6 +33,7 @@ define([], function() {
     "Location": "Ubicación",
     "Read": "Leído",
     "Yes": "Sí",
-    "No": "No"
+    "No": "No",
+    "TeamChannels": "Canales"
   }
 });

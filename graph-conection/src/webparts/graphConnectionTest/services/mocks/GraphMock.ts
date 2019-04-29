@@ -2,6 +2,7 @@ import { IGraphDataReader } from "../../managers/IGraphDataReader";
 import { ISPGraphUser } from "../../entities/ISPGraphUser";
 import { ISPGraphMails } from "../../entities/ISPGraphMail";
 import { ISPGraphTeams } from "../../entities/ISPGraphTeam";
+import { ISPGraphTeamChannels } from "../../entities/ISPGraphTeamChannel";
 
 export class GraphMock implements IGraphDataReader {
 
@@ -82,6 +83,25 @@ export class GraphMock implements IGraphDataReader {
         ]
     };
 
+    private static teamChannels: any = {
+        value: [
+            {
+                id: "19:907753dad99c4c4f9c6727c375f72513@thread.skype",
+                displayName: "General",
+                description: "Este es un equipo público",
+                email: "",
+                webUrl: "https://teams.microsoft.com/l/channel/19%3a907753dad99c4c4f9c6727c375f72513%40thread.skype/General?groupId=a693d445-6a76-4c8e-a78d-48d0919addd9&tenantId=583b53c2-34bf-43bb-b1d5-e8a57f7083a3"
+            },
+            {
+                id: "19:0c8d27d3e6c445f6bbeee2b4dd3cccde@thread.skype",
+                displayName: "Canal del equipo 1",
+                description: "Canal para el enemigo, digo, equipo público número 1",
+                email: "",
+                webUrl: "https://teams.microsoft.com/l/channel/19%3a0c8d27d3e6c445f6bbeee2b4dd3cccde%40thread.skype/Canal+del+equipo+1?groupId=a693d445-6a76-4c8e-a78d-48d0919addd9&tenantId=583b53c2-34bf-43bb-b1d5-e8a57f7083a3"
+            }
+        ]
+    };
+
     constructor() {}
 
     public GetCurrentUserData(): Promise<ISPGraphUser> {
@@ -108,4 +128,9 @@ export class GraphMock implements IGraphDataReader {
         });
     }
 
+    public GetChannelsByTeam(teamID: string): Promise<ISPGraphTeamChannels> {
+        return new Promise<ISPGraphTeamChannels>((resolve) => {
+            resolve(GraphMock.teamChannels);
+        });
+    }
 }
