@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "modal-new-form-extension-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/modalNewFormExtension/ModalNewFormExtensionCommandSet.js",
+          "manifest": "./src/extensions/modalNewFormExtension/ModalNewFormExtensionCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ModalNewFormExtensionCommandSetStrings": "lib/extensions/modalNewFormExtension/loc/{locale}.js"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "id": "66d9d4ef-6f50-4b79-9ffb-a532be065ee2",
+  "alias": "WebcommonsLibrary",
+  "componentType": "Library",
+
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
+  "manifestVersion": 2
+}
